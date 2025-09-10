@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "open-sans";
+    src: url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf);
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "open-sans";
+    src: url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+    font-style: italic;
+}
+
+/* global variables */
+:root {
+    --main-color: #FE6138;
+    --main-o-color: #fe5f387e;
+    --second-color: #00A489;
+    --second-o-color: #00a4897c;
+    --card-color: #EDEDED;
+    --transition-dur: 0.5s;
+}
+
+body {
+    font-family: open-sans;
+}
+
+/* end global variables */
+/* start main section */
+
+main {
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: clamp(90vh, 90vh, 100vh);
+    position: relative;
+}
+
+nav {
+    background-color: var(--second-color);
+}
+
+nav ul li:last-child {
+    background-color: var(--main-color);
+}
+
+.main-sec {
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.main-sec .row .col {
+    background-color: var(--second-o-color);
+    width: 200px;
+    height: 200px;
+}
+
+.main-sec .row .unique {
+    background-color: var(--main-o-color);
+}
+
+/* end main section */
+/*  strat more */
+.more .row .more-text {
+    color: var(--main-color);
+}
+
+/* end maore */
+/* start about */
+.about .row .imgs {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &:hover img {
+        transform: scale(1.2) rotate(5deg);
+    }
+}
+
+.about .row .imgs img {
+    transition: var(--transition-dur);
+}
+
+.about .row .imgs::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: var(--transition-dur);
+    z-index: 2;
+    opacity: 0;
+}
+
+.about .row .imgs:hover::after {
+    opacity: 1;
+}
+
+.about .row {
+    background-color: var(--second-color);
+}
+
+.about .row .paragrah {
+    background-color: var(--second-color);
+}
+
+.about .row .paragrah-1 {
+    background-color: var(--main-color);
+}
+
+/* end about */
+/* start process */
+.main-process {
+    background-image: url(../img/process-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.process .row .col-12 {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 235px;
+    max-width: 100%;
+    height: 250px;
+    color: #fff;
+}
+
+.process .row .p-bg1 {
+    background-image: url(../img/p-bg1.jpg);
+}
+
+.process .row .p-bg2 {
+    background-image: url(../img/p-bg2.jpg);
+}
+
+.process .row .p-bg3 {
+    background-image: url(../img/p-bg3.jpg);
+}
+
+.process .row .p-bg4 {
+    background-image: url(../img/p-bg4.jpg);
+}
+
+/* end process */
+/* start blog */
+.blog .cards {
+    align-items: start;
+    display: grid;
+    grid-template-areas:
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4"
+    ;
+    gap: 20px;
+}
+
+/* small */
+@media (min-width: 768px) {
+    .blog .cards {
+        align-items: normal;
+        grid-template-areas:
+            "card-1 card-3"
+            "card-2 card-3"
+            "card-4 card-4";
+    }
+}
+
+
+/* meduim */
+@media (min-width: 1024px) {
+    .blog .cards {
+        grid-template-areas:
+            "card-1 card-2 card-3"
+            "card-4 card-4 card-3";
+    }
+
+    .card-3 img {
+        height: 625px;
+    }
+}
+
+.blog .cards .card {
+    background-color: var(--card-color);
+    border: none;
+}
+
+.blog .cards .card-1 {
+    grid-area: card-1;
+}
+
+.blog .cards .card-2 {
+    grid-area: card-2;
+}
+
+.blog .cards .card-3 {
+    grid-area: card-3;
+}
+
+.blog .cards .card-4 {
+    grid-area: card-4;
+
+}
+
+/* end blog */
+/* start portfolio */
+.portfolio .work-with {
+    background-color: var(--main-color);
+}
+
+/* end portfolio */
+/* start team section  */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%) !important;
+}
+
+/* end team section */
+/* satrt contact us */
+.contact-us .row .contact-text {
+    background-color: var(--main-color);
+}
+
+.fa-heart {
+    color: var(--main-color);
+}
+
+.fa-message {
+    color: var(--second-color);
+}
+
+/* end contact us */
