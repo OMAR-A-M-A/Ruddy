@@ -24,6 +24,37 @@ body {
     font-family: open-sans;
 }
 
+.row .imgs {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:hover img {
+        transform: scale(1.2) rotate(5deg);
+    }
+}
+
+.row .imgs img {
+    transition: var(--transition-dur);
+}
+
+.row .imgs::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: var(--transition-dur);
+    z-index: 2;
+    opacity: 0;
+}
+
+.row .imgs:hover::after {
+    opacity: 1;
+}
+
 /* end global variables */
 /* start main section */
 
@@ -71,35 +102,7 @@ nav ul li:last-child {
 
 /* end maore */
 /* start about */
-.about .row .imgs {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    &:hover img {
-        transform: scale(1.2) rotate(5deg);
-    }
-}
 
-.about .row .imgs img {
-    transition: var(--transition-dur);
-}
-
-.about .row .imgs::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    transition: var(--transition-dur);
-    z-index: 2;
-    opacity: 0;
-}
-
-.about .row .imgs:hover::after {
-    opacity: 1;
-}
 
 .about .row {
     background-color: var(--second-color);
